@@ -1,17 +1,17 @@
 package org.example;
 
 //import static org.junit.Assert.assertTrue;
-import static org.example.App.calculateChange;
-import static org.junit.jupiter.api.Assertions.*;
 
-//import org.junit.Test;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+
+import static org.example.App.calculateChange;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for simple App.
  */
-class AppTest
-{
+class AppTest {
 
     @Test
     void throwException_whenCalculateChangeIsImpossible() {
@@ -93,5 +93,14 @@ class AppTest
 
         Change changeExpectedFor26 = new Change(2, 0, 3);
         assertEquals(changeExpectedFor26, calculateChange(26));
+
+        Change changeExpectedFor58 = new Change(5, 0, 4);
+        assertEquals(changeExpectedFor58, calculateChange(58));
+
+        Change changeExpectedFor224 = new Change(22, 0, 2);
+        assertEquals(changeExpectedFor224, calculateChange(224));
+
+        Change changeExpectedFor1047 = new Change(104, 1, 1);
+        assertEquals(changeExpectedFor1047, calculateChange(1047));
     }
 }

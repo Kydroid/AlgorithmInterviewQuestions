@@ -1,5 +1,8 @@
 package org.example.fibonacci;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Write a method that returns the nth element of the Fibonacci Sequence.
  * The next number is found by adding up the two numbers before it.
@@ -16,15 +19,26 @@ public class Fibonacci {
             return 0;
         }
 
-        return calculateNthElementOfFibonacciSequence(nthElement, nthElement);
+        return calculateNthElementOfFibonacciSequence(nthElement, new HashMap<>());
     }
 
-    private static int calculateNthElementOfFibonacciSequence(int nthElement, int nthElementOriginal) throws Exception {
+    /**
+     * Use of memoization to optimize algo and reduce stack call.
+     * @param nthElement
+     * @param mapFibResultMemo : a map to store previous result and return cached data
+     * @return
+     * @throws Exception
+     */
+    private static int calculateNthElementOfFibonacciSequence(int nthElement, Map<Integer, Integer> mapFibResultMemo) throws Exception {
         if (nthElement <= 2) {
             return 1;
         }
 
-        return calculateNthElementOfFibonacciSequence(nthElement - 1, nthElementOriginal)
-                + calculateNthElementOfFibonacciSequence(nthElement - 2, nthElementOriginal);
+        if (!mapFibResultMemo.containsKey(nthElement)) {
+            int fibResult = calculateNthElementOfFibonacciSequence(nthElement - 1, mapFibResultMemo)
+                    + calculateNthElementOfFibonacciSequence(nthElement - 2, mapFibResultMemo);
+            mapFibResultMemo.put(nthElement, fibResult);
+        }
+        return mapFibResultMemo.get(nthElement);
     }
 }

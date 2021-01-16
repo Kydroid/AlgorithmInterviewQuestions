@@ -17,7 +17,7 @@ class FibonacciTest {
 
     /**
      * This test for FibonacciSequence takes 765ms (best score after several tests launched)
-     *
+     * Update : After refacto with memoization, FibonacciSequence takes 15ms (best score) with the same tests below.
      * @throws Exception
      */
     @Test

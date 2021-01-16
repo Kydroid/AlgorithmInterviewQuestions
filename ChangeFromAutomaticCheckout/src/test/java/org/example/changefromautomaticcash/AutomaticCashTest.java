@@ -1,17 +1,15 @@
-package org.example;
-
-//import static org.junit.Assert.assertTrue;
+package org.example.changefromautomaticcash;
 
 import org.junit.jupiter.api.Test;
 
-import static org.example.App.calculateChange;
+import static org.example.changefromautomaticcash.AutomaticCash.calculateChange;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for simple App.
  */
-class AppTest {
+class AutomaticCashTest {
 
     @Test
     void throwException_whenCalculateChangeIsImpossible() {

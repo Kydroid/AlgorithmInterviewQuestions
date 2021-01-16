@@ -12,11 +12,19 @@ public class Fibonacci {
             throw new Exception("Error : negative number entered.");
         }
 
-        if (nthElement >= 3) {
-            return getNthElementOfFibonacciSequence(nthElement - 1)
-                    + getNthElementOfFibonacciSequence(nthElement - 2);
+        if (nthElement == 0) {
+            return 0;
         }
 
-        return (nthElement == 1 || nthElement == 2) ? 1 : 0;
+        return calculateNthElementOfFibonacciSequence(nthElement, nthElement);
+    }
+
+    private static int calculateNthElementOfFibonacciSequence(int nthElement, int nthElementOriginal) throws Exception {
+        if (nthElement <= 2) {
+            return 1;
+        }
+
+        return calculateNthElementOfFibonacciSequence(nthElement - 1, nthElementOriginal)
+                + calculateNthElementOfFibonacciSequence(nthElement - 2, nthElementOriginal);
     }
 }

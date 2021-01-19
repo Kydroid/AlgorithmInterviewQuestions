@@ -9,3 +9,8 @@ Use of memoization to optimize algo and reduce stack call.
 
 ## Change from automatic cash
 Algorithm : Get optimized change from payment. Use only $10 bill, $5 bill and $2 coin.
+
+## Find file inside a directory tree
+Research file or directory inside a directory tree of a folder. 
+Use of recursivity.
+And alternative from Files.find() from Java 8.

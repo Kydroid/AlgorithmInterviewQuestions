@@ -2,8 +2,7 @@ package org.example.reverselist;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ReverseArrayTest {
 
@@ -22,6 +21,13 @@ class ReverseArrayTest {
     void returnSameArray_whenArrayProvidedContainsOneElement() {
         int[] array = new int[]{1};
         assertSame(array, ReverseArray.reverseOrder(array));
+    }
+
+    @Test
+    void returnReverseArray_whenArrayProvidedContainsSeveralElements() {
+        int[] array = new int[]{1, 2};
+        int[] reverseArray = new int[]{2, 1};
+        assertArrayEquals(reverseArray, ReverseArray.reverseOrder(array));
     }
 
 }

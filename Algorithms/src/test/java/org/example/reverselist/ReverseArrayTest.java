@@ -18,4 +18,10 @@ class ReverseArrayTest {
         assertSame(array, ReverseArray.reverseOrder(array));
     }
 
+    @Test
+    void returnSameArray_whenArrayProvidedContainsOneElement() {
+        int[] array = new int[]{1};
+        assertSame(array, ReverseArray.reverseOrder(array));
+    }
+
 }

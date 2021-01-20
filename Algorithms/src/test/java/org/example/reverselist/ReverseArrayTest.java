@@ -26,8 +26,12 @@ class ReverseArrayTest {
     @Test
     void returnReverseArray_whenArrayProvidedContainsSeveralElements() {
         int[] array = new int[]{1, 2};
-        int[] reverseArray = new int[]{2, 1};
-        assertArrayEquals(reverseArray, ReverseArray.reverseOrder(array));
+        int[] reverseArrayExpected = new int[]{2, 1};
+        assertArrayEquals(reverseArrayExpected, ReverseArray.reverseOrder(array));
+
+        array = new int[]{1, 2, 3};
+        reverseArrayExpected = new int[]{3, 2, 1};
+        assertArrayEquals(reverseArrayExpected, ReverseArray.reverseOrder(array));
     }
 
 }

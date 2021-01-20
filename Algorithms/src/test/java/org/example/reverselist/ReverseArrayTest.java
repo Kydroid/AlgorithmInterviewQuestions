@@ -32,6 +32,10 @@ class ReverseArrayTest {
         array = new int[]{1, 2, 3};
         reverseArrayExpected = new int[]{3, 2, 1};
         assertArrayEquals(reverseArrayExpected, ReverseArray.reverseOrder(array));
+
+        array = new int[]{1, 2, 3, 4};
+        reverseArrayExpected = new int[]{4, 3, 2, 1};
+        assertArrayEquals(reverseArrayExpected, ReverseArray.reverseOrder(array));
     }
 
 }
